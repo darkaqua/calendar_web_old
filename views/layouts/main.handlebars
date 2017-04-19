@@ -5,12 +5,13 @@
 
     <link href="/metro-template/css/metro.css" rel="stylesheet">
     <link href="/metro-template/css/metro-icons.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script src="/metro-template/js/metro.js"></script>
 
     {{#if title}}
-        <title>{{web_name}} : {{{title}}}</title>
+        <title>{{{title}}} - {{web_name}}</title>
     {{else}}
         <title>{{web_name}}</title>
     {{/if}}
@@ -21,7 +22,7 @@
         {{> header}}
     </div>
 
-    <div class="container page-content">
+    <div class="page-content">
         {{{body}}}
     </div>
 

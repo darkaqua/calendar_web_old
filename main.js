@@ -16,12 +16,9 @@ app.set('view engine', 'handlebars');
 //Asignación de las rutas de la web
 require('./routes')(app, express);
 
+global.config = JSON.parse(fs.readFileSync('./private/config.json', 'utf8'));
 
-const port = 80;
+const port = global.config.web.port;
 app.listen(port, () => {
     console.log(`Web server started at http://localhost:${port}`)
 });
-
-
-
-module.exports.config = JSON.parse(fs.readFileSync('./private/config.json', 'utf8'));
